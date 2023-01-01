@@ -57,18 +57,18 @@ else
   # parallel compilation
   export NUM_JOBS=4
 
-  cd piton/design/chip/tile/ariane/
+  cd piton/design/chip/tile/ariane/ci
 
   # not all tools are required at the moment
-  ci/make-tmp.sh
-  cd /home/muheet-ghani/openpiton
-   source /home/muheet-ghani/openpiton/source/build-riscv-gcc.sh
-   source /home/muheet-ghani/openpiton/source/install-fesvr.sh
-   source /home/muheet-ghani/openpiton/source/install-spike.sh
-   source /home/muheet-ghani/openpiton/source/install-verilator.sh
+  source make-tmp.sh
+  cd /home/snaveed/openpiton
+  # source /home/snaveed/openpiton/source/build-riscv-gcc.sh
+   source /home/snaveed/openpiton/source/install-fesvr.sh
+   source /home/snaveed/openpiton/source/install-spike.sh
+   source /home/snaveed/openpiton/source/install-verilator.sh
 
   # build the RISCV tests if necessary
-  cd /home/muheet-ghani/openpiton/piton/design/chip/tile/ariane/
+  cd /home/snaveed/openpiton/piton/design/chip/tile/ariane
   cd tmp
 
   git clone https://github.com/riscv/riscv-tests.git

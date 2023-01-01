@@ -2,7 +2,7 @@
 # call with first argument = 0 to checkout only
 
 set -e
-ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+export ROOT=/home/snaveed/openpiton/piton/design/chip/tile/ariane
 
 mkdir -p $RISCV
 
@@ -15,7 +15,7 @@ fi
 
 if ! [ -e $RISCV/bin ]; then
 
-    cd /home/muheet-ghani/riscv-gnu-toolchain
+    cd /home/snaveed/tools/riscv_install
 
     if [[ $1 -ne "0" || -z ${1} ]]; then
       echo "Compiling RISC-V Toolchain"
