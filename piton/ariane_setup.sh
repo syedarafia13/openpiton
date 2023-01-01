@@ -58,7 +58,7 @@ fi
 
 SCRIPTNAME=ariane_setup.sh
 
-TEST=`pwd`/piton/
+export TEST=/home/snaveed/openpiton/piton
 if [[ $(readlink -e "${TEST}/${SCRIPTNAME}") == "" ]]
 then
   echo "aborting"
@@ -70,14 +70,14 @@ fi
 ################################
 
 # set root directory
-export PITON_ROOT=`pwd`
-export ARIANE_ROOT=${PITON_ROOT}/piton/design/chip/tile/ariane/
+export PITON_ROOT=/home/snaveed/openpiton
+export ARIANE_ROOT=${PITON_ROOT}/piton/design/chip/tile/ariane
 
 ## GCC and RISCV GCC setup
 export CXX=g++ CC=gcc
 # customize this to a fast local disk
-export RISCV=/home/$USER/tools/riscv_install
-export VERILATOR_ROOT=$ARIANE_ROOT/tmp/verilator-4.110/
+export RISCV=/home/snaveed/tools/riscv_install
+export VERILATOR_ROOT=$ARIANE_ROOT/tmp/verilator-4.110
 export PATH=$RISCV/bin:$VERILATOR_ROOT/bin:$PATH
 export LIBRARY_PATH=$RISCV/lib
 export LD_LIBRARY_PATH=$RISCV/lib
